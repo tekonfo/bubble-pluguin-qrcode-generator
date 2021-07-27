@@ -36,6 +36,7 @@ export const update = function(instance, properties, context) {
     canvas.setAttribute("id", "canvas");
 
     const options = {
+        width: properties.width,
         color: { dark: dark_color, light: light_color },
         // Highに設定する。これで30%くらいは堪えれる。
         errorCorrectionLevel: 'H',
@@ -47,6 +48,20 @@ export const update = function(instance, properties, context) {
             d.appendChild(error_message)
         } else {
             d.appendChild(cv)
+
+            const cvHeight = cv.height
+            const cvWidth = cv.width
+
+            const logoHeight = cvHeight / 4
+            const logoWidth = cvWidth / 4
+
+            var context = cv.getContext('2d');
+            var logo = new Image()
+            logo.src = properties.logo
+            logo.addEventListener('load', function() {
+              context.drawImage(logo, (cvWidth / 2) - (logoWidth / 2), (cvHeight / 2) - (logoHeight / 2), logoHeight, logoWidth);
+            }, false);
+
         }
       })
 
