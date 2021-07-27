@@ -21,8 +21,6 @@ export const update = function(instance, properties, context) {
         return hex;
       }
 
-
-
     if (properties.url === undefined || properties.url === null) {
         return
     }
@@ -38,7 +36,9 @@ export const update = function(instance, properties, context) {
     canvas.setAttribute("id", "canvas");
 
     const options = {
-        color: { dark: dark_color, light: light_color }
+        color: { dark: dark_color, light: light_color },
+        // Highに設定する。これで30%くらいは堪えれる。
+        errorCorrectionLevel: 'H',
     }
 
      QRCode.toCanvas(properties.url, options, function (error, cv) {
