@@ -1,3 +1,11 @@
+# QRCode_generator for Bubble.io
+Bubble.ioで提供しているQRCoce Generator プラグインの実装内容です。
+ローカルで開発できるよう諸々調整しています。
+
+plugin url: https://bubble.io/plugin/qrcode-generator-1627220810267x534769642467754000
+
+実装内容はpreview.js, update.jsをご覧下さい
+
 ## 利用ライブラリ
 https://github.com/soldair/node-qrcode#encoding-modes
 

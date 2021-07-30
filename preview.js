@@ -1,7 +1,7 @@
 // QRCodeが使えないので、静的リンクでなんとかする。
 // サイズとロゴだけ確認できるようにはできるかな
 export const preview = function(instance, properties) {
-    const margin = 4
+    const margin = 6
 
     // 上下左右のmarginを省く
     const width = properties.width - margin * 2
